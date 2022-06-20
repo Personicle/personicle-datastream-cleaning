@@ -1,0 +1,33 @@
+// DEPRECATED
+{
+    "type": "record",
+    "name": "fitbit_datastream_record",
+    "fields": [
+        {
+            "name": "individual_id",
+            "type": "string"
+        },
+        {
+            "name": "timestamp",
+            "type": "long",
+            "logicalType" : "timestamp-millis"
+        },
+        {
+            "name": "stream",
+            "type": "string"
+        },
+        {
+            "name": "value",
+            "type": "int"
+        },
+        {
+            "name": "unit",
+            "type": "string"
+        },
+        {
+            "name": "confidence",
+            "type": "int",
+            "default": -1
+        }
+    ]
+}

@@ -9,8 +9,8 @@ import asyncio
 import json
 import logging
 
-# from application.config import EVENTHUB_CONFIG
-# from application.config import PROJ_LOC
+from config import EVENTHUB_CONFIG
+from config import PROJ_LOC
 
 LOG = logging.getLogger(__name__)
 
@@ -30,30 +30,28 @@ def send_records_to_eventhub(schema_file, records, eventhub_name):
     credential = DefaultAzureCredential()
     # Namespace should be similar to: '<your-eventhub-namespace>.servicebus.windows.net'
 
-    fully_qualified_namespace = os.environ['SCHEMA_REGISTRY_FQNS']
-    group_name = os.environ['SCHEMA_REGISTRY_GROUP']
+    fully_qualified_namespace = EVENTHUB_CONFIG['SCHEMA_REGISTRY_FQNS']
+    group_name = EVENTHUB_CONFIG['SCHEMA_REGISTRY_GROUP']
     schema_registry_client = SchemaRegistryClient(fully_qualified_namespace, credential)
     serializer = AvroSerializer(client=schema_registry_client, group_name=group_name, auto_register_schemas=True)
 
     # define event hub producer client
-    LOG.info("connection string: {}".format(os.environ['EVENTS_EVENTHUB_CONNECTION_STRING']))
-    
-
+    LOG.info("connection string: {}".format(EVENTHUB_CONFIG['CONNECTION_STRING']))
     eventhub_producer = EventHubProducerClient.from_connection_string(
-        conn_str=os.environ['EVENTS_EVENTHUB_CONNECTION_STRING'],
+        conn_str=
+        EVENTHUB_CONFIG['CONNECTION_STRING'],
         eventhub_name= eventhub_name
     )
-    
-    
+
     # load schema string
-    # with open(os.path.join(PROJ_LOC, "avro_modules", schema_file), "r") as schema_fp:
-    #     schema_string = schema_fp.read()
-    # print(schema_string)
+    with open(os.path.join(PROJ_LOC, "avro_modules", schema_file), "r") as schema_fp:
+        schema_string = schema_fp.read()
+    print(schema_string)
     # call async producer with schema, producer and serializer
     # loop = asyncio.get_event_loop()
-    LOG.info("sending {} to {}".format(records, eventhub_name))
+    LOG.info("sending {} to {} with schema {}".format(records, eventhub_name, schema_string))
 
-    produce_records(records, eventhub_producer, serializer, None, credential)
+    produce_records(records, eventhub_producer, serializer, schema_string, credential)
 
     LOG.info("method send_records_to_eventhub finished sending records")
 

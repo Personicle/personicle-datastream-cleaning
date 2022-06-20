@@ -1,0 +1,145 @@
+{
+    "com.personicle": {
+        "individual": {
+            "events": {
+                "com.personicle.individuals.events.running":{
+                    "TableName":"personal_events",
+                    "parameters":{
+                        "duration":{
+                            "ValueType":"Integer",
+                            "Unit": "seconds"
+                        },
+                        "source_device":{
+                            "ValueType": "String",
+                            "Unit": "NULL"
+                        }
+                        
+                    }
+                }
+            },
+            "datastreams": {
+                "com.personicle.individual.datastreams.heartrate": {
+                    "ValueType": "Integer",
+                    "Unit": "bpm",
+                    "TableName": "heartrate",
+                    "base_schema": "integer_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.heart_intensity_minutes": {
+                    "ValueType": "Numeric",
+                    "Unit": "minutes",
+                    "TableName": "heart_intensity_minutes",
+                    "base_schema": "integer_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.active_minutes": {
+                    "ValueType": "Numeric",
+                    "Unit": "minutes",
+                    "TableName": "active_minutes",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.step.cumulative": {
+                    "ValueType": "Integer",
+                    "Unit": "count",
+                    "TableName": "steps_cumulative",
+                    "base_schema": "integer_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.resting_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "calories_resting",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.active_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "calories_active",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.total_calories": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilo_calories",
+                    "TableName": "calories_total",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.distance": {
+                    "ValueType": "Numeric",
+                    "Unit": "meters",
+                    "TableName": "distance",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.weight": {
+                    "ValueType": "Numeric",
+                    "Unit": "kilogram",
+                    "TableName": "weight",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.cycling.cadence": {
+                    "ValueType": "Numeric",
+                    "Unit": "rpm",
+                    "TableName": "cycling_cadence",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.cycling.power": {
+                    "ValueType": "Numeric",
+                    "Unit": "watts",
+                    "TableName": "cycling_power",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.step.cadence": {
+                    "ValueType": "Numeric",
+                    "Unit": "stepsperminute",
+                    "TableName": "step_cadence",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.body_fat": {
+                    "ValueType": "Numeric",
+                    "Unit": "percentage",
+                    "TableName": "body_fat",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.height": {
+                    "ValueType": "Numeric",
+                    "Unit": "cm",
+                    "TableName": "height",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.location": {
+                    "ValueType": "Object",
+                    "Unit": "NA",
+                    "TableName": "location",
+                    "base_schema": "location_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.speed": {
+                    "ValueType": "Numeric",
+                    "Unit": "kmph",
+                    "TableName": "speed",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.blood_glucose": {
+                    "ValueType": "Numeric",
+                    "Unit": "",
+                    "TableName": "blood_glucose",
+                    "base_schema": "json_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.blood_pressure.systolic": {
+                    "ValueType": "Numeric",
+                    "Unit": "mm",
+                    "TableName": "blood_pressure_systolic",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.blood_pressure.diastolic": {
+                    "ValueType": "Numeric",
+                    "Unit": "mm",
+                    "TableName": "blood_pressure_diastolic",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                },
+                "com.personicle.individual.datastreams.body_temperature": {
+                    "ValueType": "Numeric",
+                    "Unit": "Celsius",
+                    "TableName": "body_temperature",
+                    "base_schema": "numeric_datastream_schema.avsc"
+                }
+
+            }
+        }
+    }
+}

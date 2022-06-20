@@ -1,0 +1,32 @@
+{
+    "type": "record",
+    "name": "com.personicle.individual.datastream.base.integer",
+    "fields": [
+        {
+            "name": "individual_id",
+            "type": "string"
+        },
+        {
+            "name": "timestamp",
+            "type": "long",
+            "logicalType" : "timestamp-millis"
+        },
+        {
+            "name": "source",
+            "type": "string"
+        },
+        {
+            "name": "value",
+            "type": "string"
+        },
+        {
+            "name": "unit",
+            "type": "string"
+        },
+        {
+            "name": "confidence",
+            "type": "int",
+            "default": -1
+        }
+    ]
+}

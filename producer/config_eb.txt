@@ -1,0 +1,7 @@
+[EVENTHUB]
+CONNECTION_STRING: Endpoint=sb://personicle-eventhub-dev.servicebus.windows.net/;SharedAccessKeyName=testhub-policy-s1;SharedAccessKey=/WtIDcSPgtcJXOS009LgYhKSPGUTmoJisRVRbmYZllo=;EntityPath=testhub-new
+DATASTREAM_EVENTHUB_CONNECTION_STRING: Endpoint=sb://personicle-eventhub-dev.servicebus.windows.net/;SharedAccessKeyName=test_analytics_job_namespace_policy;SharedAccessKey=kMGKpnwn++uCnd7aSjQtrUzVq9QwEdKzRMMG1Q1/HQg=;EntityPath=datastream-hub
+EVENTHUB_NAME=testhub-new
+DATASTREAM_EVENTHUB_NAME: datastream-hub
+SCHEMA_REGISTRY_FQNS=personicle-eventhub-dev.servicebus.windows.net
+SCHEMA_REGISTRY_GROUP=event_schema
