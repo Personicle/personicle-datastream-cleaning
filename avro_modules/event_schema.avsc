@@ -1,0 +1,33 @@
+{
+    "namespace": "com.personicle.individual.event.fitbit",
+    "type": "record",
+    "name": "fitbit_event_record",
+    "fields": [
+        {
+            "name": "individual_id",
+            "type": "string"
+        },
+        {
+            "name": "start_time",
+            "type": "string",
+            "logicalType" : "timestamp-millis"
+        },
+        {
+            "name": "end_time",
+            "type": "string",
+            "logicalType" : "timestamp-millis"
+        },
+        {
+            "name": "event_name",
+            "type": "string"
+        },
+        {
+            "name": "source",
+            "type": "string"
+        },
+        {
+            "name": "parameters",
+            "type": "string"
+        }
+    ]
+}

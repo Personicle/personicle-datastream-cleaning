@@ -1,6 +1,6 @@
 import sqlalchemy
 import databases
-# from pydantic import BaseModel
+from pydantic import BaseModel
 from typing import List, Optional, Text
 from datetime import datetime, timezone
 from sqlalchemy.ext.declarative import declarative_base

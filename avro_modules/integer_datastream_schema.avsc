@@ -1,0 +1,43 @@
+{
+    "name": "integer_valued_stream_message",
+    "namespace": "com.personicle.individual.datastreams.base.int_stream",
+    "type": "record",
+    "fields": [
+        {
+            "name":"streamName",
+            "type": "string"
+        },
+        {
+            "name": "individual_id",
+            "type": "string"
+        },
+        {
+            "name": "source",
+            "type": "string"
+        },
+        {
+            "name": "confidence",
+            "type": ["float", "null"]
+        },
+        {
+            "name":"unit",
+            "type":["string", "null"]
+        },
+        {
+            "name": "dataPoints",
+            "type": {
+                "type":"array", "items":[
+                    {
+                        "name": "datapoints",
+                        "type":"record",
+                        "fields":[
+                            {"name": "timestamp", "type":"string"},
+                            {"name": "value", "type":"int"}
+                        ]
+                    }
+                ]
+            }
+            
+        }
+    ]
+}
